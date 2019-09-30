@@ -1,30 +1,31 @@
 /*!
-Title: Dev Portfolio Template
-Version: 1.1.2
-Last Change: 03/21/17
-Author: Ryan Fitzgerald
-Repo: https://github.com/RyanFitzgerald/devportfolio-template
-Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
+    Title: Dev Portfolio Template
+    Version: 1.2.1
+    Last Change: 08/28/2017
+    Author: Ryan Fitzgerald
+    Repo: https://github.com/RyanFitzgerald/devportfolio-template
+    Issues: https://github.com/RyanFitzgerald/devportfolio-template/issues
 
-Description: This file contains all the styles associated with the page
-that don't come from third party libraries. This file gets compiled using
-Gulp and send to the /css folder which is then loaded on the page.
- */
+    Description: This file contains all the styles associated with the page
+    that don't come from third party libraries. This file gets compiled using
+    Gulp and send to the /css folder which is then loaded on the page.
+*/
 /*
-File Contents:
+    File Contents:
 
-1. Variables
-2. Mixins
-3. Global Styles
-4. Lead Styles
-5. About Styles
-6. Experience Styles
-7. Education Styles
-8. Project Styles
-9. Skills Styles
-10. Contact Styles
-11. Media Queries
- */
+        1. Variables
+        2. Mixins
+        3. Global Styles
+        4. Lead Styles
+        5. About Styles
+        6. Experience Styles
+        7. Education Styles
+        8. Project Styles
+        9. Skills Styles
+        10. Contact Styles
+        11. Optional Section Styles
+        12. Media Queries
+*/
 
 /*
 ------------------------
@@ -199,11 +200,11 @@ header {
       color: $base00;
       text-decoration: none;
     }
-  }
 
-  &.active {
-    display: block;
-  }
+    &.sticky {
+        position: fixed;
+        z-index: 999;
+    }
 }
 
 #menu {
@@ -695,6 +696,19 @@ footer {
   }
 }
 
+.no-image {
+    .project-info {
+        position: relative;
+        margin: 0;
+        padding: 30px 15px;
+        transform: none;
+    }
+}
+
+#more-projects {
+    display: none;
+}
+
 /*
 -------------------------------
 ----- 9. Skills Styles -----
@@ -795,10 +809,58 @@ footer {
 }
 
 /*
-----------------------------
------ 11. Media Queries -----
-----------------------------
- */
+    ---------------------------------------
+    ----- 11. Optional Section Styles -----
+    ---------------------------------------
+*/
+
+.optional-section {
+    padding: 50px 15px;
+    text-align: center;
+    border-top: 1px solid $border;
+
+    h2 {
+        color: $heading;
+    }
+}
+
+.optional-section-block {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    border: 1px solid $border;
+    background: #fff;
+    text-align: left;
+
+    h3 {
+        font-weight: 500;
+        margin: 0 0 15px 0;
+        color: $heading;
+    }
+
+    h4 {
+        color: $text;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    p, ul {
+        margin: 0 0 15px 0;
+        color: $text;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
+    }
+}
+
+/*
+    -----------------------------
+    ----- 12. Media Queries -----
+    -----------------------------
+*/
 
 // Collapse timeline
 @media only screen and (max-width: 750px) {
@@ -910,8 +972,12 @@ footer {
       font-size: 1em;
     }
 
-    a {
-      padding: 10px 20px;
+    .project-info {
+        position: relative;
+        margin: 0;
+        padding: 30px 15px;
+        top: auto;
+        transform: none;
     }
   }
 
