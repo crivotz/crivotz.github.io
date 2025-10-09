@@ -4,7 +4,7 @@ body {
   font-family: 'JetBrains Mono', 'Fira Mono', 'Courier New', monospace;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 20;
 }
 
 .terminal {
