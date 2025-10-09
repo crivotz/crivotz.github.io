@@ -1,0 +1,93 @@
+body {
+  background-color: #1a1b26;
+  color: #a9b1d6;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Courier New', monospace;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal {
+  max-width: 1100px;
+  margin: 36px auto;
+  background: #16161e;
+  padding: 28px 28px 0 28px;
+  border-radius: 10px;
+  box-shadow: 0 0 24px rgba(30, 27, 38, 0.8);
+  position: relative;
+}
+
+.logo-container {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.logo {
+  height: 38px;
+  vertical-align: middle;
+}
+
+.folders {
+  margin-bottom: 20px;
+  color: #7aa2f7;
+  font-size: 1em;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.folder {
+  display: inline-block;
+  background: #24283b;
+  color: #7aa2f7;
+  padding: 2px 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+pre {
+  background: none;
+  color: #a9b1d6;
+  font-size: 1.1em;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #7aa2f7;
+  font-weight: bold;
+}
+.command {
+  color: #7dcfff;
+}
+.info {
+  color: #bb9af7;
+}
+.statusbar {
+  position: relative;
+  margin-top: 18px;
+  padding: 0 0 8px 0;
+  text-align: right;
+}
+.statusbox {
+  display: inline-block;
+  background: #24283b;
+  color: #a9b1d6;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-right: 4px;
+  font-size: 0.95em;
+}
+.statusbox.host {
+  background: #394b70;
+  color: #e0af68;
+}
+a {
+  color: #7aa2f7;
+  text-decoration: none;
+  border-bottom: 1px dotted #7aa2f7;
+}
+a:hover {
+  color: #bb9af7;
+  border-bottom: 1px solid #bb9af7;
+}
