@@ -12,18 +12,12 @@
 
 <body>
   <div class="terminal container">
-    <!-- Logo from your repo -->
-    <div class="logo-container mb-3">
-      <img src="logo.svg" alt="crivotz logo" class="logo">
-    </div>
-    <!-- Folder bar just like in your terminal -->
     <div class="folders mb-3">
-      <span class="folder"><a href="https://github.com/crivotz/nv-ide">nv-ide/</a></span>
-      <span class="folder"><a href="https://github.com/crivotz/dot_files">dot_files/</a></span>
-      <span class="folder"><a href="https://github.com/crivotz/FTBLegends">FTBLegends/</a></span>
-      <span class="folder"><a href="https://github.com/crivotz/gcheck">gcheck/</a></span>
-      <span class="folder"><a href="https://www.aretes.net">work/</a></span>
-      <!-- Add more as needed -->
+      <span class="folder text-uppercase"><a href="https://github.com/crivotz/nv-ide">nv-ide/</a></span>
+      <span class="folder text-uppercase"><a href="https://github.com/crivotz/dot_files">dot_files/</a></span>
+      <span class="folder text-uppercase"><a href="https://github.com/crivotz/FTBLegends">FTBLegends/</a></span>
+      <span class="folder text-uppercase"><a href="https://github.com/crivotz/gcheck">gcheck/</a></span>
+      <span class="folder text-uppercase"><a href="https://www.aretes.net">work/</a></span>
     </div>
     <pre id="terminal-content" class="mb-3">
       <span class="prompt">❯</span> <span class="command">whoami</span>
@@ -53,7 +47,6 @@
 
       <span class="prompt">❯</span> _
     </pre>
-    <!-- Status bar at the bottom, just like your terminal -->
     <div class="statusbar">
       <span class="statusbox float-start"> λ </span>
       <span class="statusbox float-start">1 ❯ zsh</span>
@@ -63,12 +56,11 @@
       <span class="statusbox host fw-bold">DEBMAU</span>
     </div>
   </div>
-  <script src="cursor.js"></script>
   <script>
     function updateStatusBar() {
       const now = new Date();
-      const date = now.toLocaleDateString('en-GB').replace(/\//g, '-'); // DD-MM-YYYY
-      const time = now.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit'});
+      const date = now.toLocaleDateString('it-IT').replace(/\//g, '-'); // DD-MM-YYYY
+      const time = now.toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit'});
       document.getElementById('status-date').textContent = date;
       document.getElementById('status-time').textContent = time;
     }

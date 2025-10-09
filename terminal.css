@@ -8,13 +8,6 @@ body {
 }
 
 .terminal {
-  max-width: 1100px;
-  margin: 36px auto;
-  background: #16161e;
-  padding: 28px 28px 0 28px;
-  border-radius: 10px;
-  box-shadow: 0 0 24px rgba(30, 27, 38, 0.8);
-  position: relative;
 }
 
 .logo-container {
