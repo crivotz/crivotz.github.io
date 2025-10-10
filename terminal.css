@@ -85,3 +85,8 @@ a:hover {
   color: #bb9af7;
   border-bottom: 1px solid #bb9af7;
 }
+.nf {
+  font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
