@@ -22,11 +22,7 @@ body {
 }
 
 .folders {
-  margin-bottom: 20px;
   color: #7aa2f7;
-  font-size: 1em;
-  overflow-x: auto;
-  white-space: nowrap;
 }
 
 .folder {
