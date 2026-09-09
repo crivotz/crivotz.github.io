@@ -39,12 +39,22 @@
       - 🧗‍♂️ Climbing enthusiast
       - 🎲 Tabletop RPG fan
 
+      <span class="prompt">❯</span> <span class="command">cat skills.md</span>
+      <span class="folders">
+        <span class="folder">Ruby on Rails</span>
+        <span class="folder">JavaScript</span>
+        <span class="folder">C#</span>
+        <span class="folder">PHP</span>
+        <span class="folder">GCP</span>
+        <span class="folder">AWS</span>
+      </span>
+
       <span class="prompt">❯</span> <span class="command">cat stack.md</span>
-      - OS: Debian — reliable, stable, dev-friendly
+      - OS: NixOS and Debian
       - Editor: Neovim (<a href="https://github.com/crivotz/nv-ide" target="_blank">nv-ide</a>)
-      - Shell: zsh + zinit
+      - Shell: zsh
       - Terminal: Ghostty
-      - Dotfiles: <a href="https://github.com/crivotz/dot_files" target="_blank">dot_files</a>
+      - Dotfiles: <a href="https://github.com/crivotz/dot_files" target="_blank">dot_files</a> / <a href="https://github.com/crivotz/dot_files_nixos" target="_blank">dot_files_nixos</a>
 
       <span class="prompt">❯</span> <span class="command">cat contact.md</span>
       - <a href="https://linkedin.com/in/maurolocatelli" target="_blank">Linkedin</a>
@@ -57,6 +67,8 @@
             target="_blank">nv-ide/</a></span>
         <span class="folder"><a href="https://github.com/crivotz/dot_files"
             target="_blank">dot_files/</a></span>
+        <span class="folder"><a href="https://github.com/crivotz/dot_files_nixos"
+            target="_blank">dot_files_nixos/</a></span>
         <span class="folder"><a href="https://locatelli.dev/FTBLegends"
             target="_blank">FTBLegends/</a></span>
         <span class="folder"><a href="https://github.com/crivotz/gcheck"
@@ -64,7 +76,9 @@
         <span class="folder"><a href="https://www.aretes.net" target="_blank">work/</a></span>
       </span>
 
-      <span class="prompt">❯</span> _
+      <span class="prompt">❯</span> <a href="#" id="theme-toggle" class="command">toggle-theme</a>
+
+      <span class="prompt">❯</span> <span class="cursor">▌</span>
     </pre>
     <div class="statusbar">
       <span class="statusbox float-start"> λ </span>
@@ -85,6 +99,21 @@
     }
     updateStatusBar();
     setInterval(updateStatusBar, 60000); // Update every minute
+
+    const THEME_KEY = 'theme';
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    const savedTheme = localStorage.getItem(THEME_KEY) || 'night';
+    applyTheme(savedTheme);
+
+    document.getElementById('theme-toggle').addEventListener('click', function (e) {
+      e.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'day' ? 'night' : 'day';
+      applyTheme(next);
+      localStorage.setItem(THEME_KEY, next);
+    });
   </script>
 </body>
 

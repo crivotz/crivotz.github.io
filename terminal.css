@@ -1,13 +1,49 @@
+:root {
+  --bg: #16161e;
+  --fg: #a9b1d6;
+  --terminal-bg: #16161e;
+  --folder-bg: #24283b;
+  --folder-fg: #7aa2f7;
+  --prompt: #7aa2f7;
+  --command: #7dcfff;
+  --info: #bb9af7;
+  --man-section: #e0af68;
+  --statusbox-bg: #24283b;
+  --statusbox-fg: #a9b1d6;
+  --host-bg: #394b70;
+  --host-fg: #e0af68;
+  --link: #7aa2f7;
+  --link-hover: #bb9af7;
+}
+
+:root[data-theme="day"] {
+  --bg: #e1e2e7;
+  --fg: #3760bf;
+  --terminal-bg: #e1e2e7;
+  --folder-bg: #d0d5e3;
+  --folder-fg: #2e7de9;
+  --prompt: #2e7de9;
+  --command: #007197;
+  --info: #9854f1;
+  --man-section: #8c6c3e;
+  --statusbox-bg: #d0d5e3;
+  --statusbox-fg: #3760bf;
+  --host-bg: #b5c1e0;
+  --host-fg: #8c6c3e;
+  --link: #2e7de9;
+  --link-hover: #9854f1;
+}
+
 body {
-  background-color: #16161e;
-  color: #a9b1d6;
+  background-color: var(--bg);
+  color: var(--fg);
   min-height: 100vh;
   margin: 0;
   padding: 20px;
 }
 
 .terminal {
-  background: #16161e
+  background: var(--terminal-bg)
 }
 
 .logo-container {
@@ -21,7 +57,7 @@ body {
 }
 
 .folders {
-  color: #7aa2f7;
+  color: var(--folder-fg);
   font-size: 1em;
   overflow-x: auto;
   white-space: nowrap;
@@ -29,8 +65,8 @@ body {
 
 .folder {
   display: inline-block;
-  background: #24283b;
-  color: #7aa2f7;
+  background: var(--folder-bg);
+  color: var(--folder-fg);
   padding: 2px 8px;
   margin-right: 6px;
   border-radius: 4px;
@@ -39,21 +75,32 @@ body {
 
 pre {
   background: none;
-  color: #a9b1d6;
+  color: var(--fg);
   font-size: 1.1em;
   margin: 0;
   white-space: pre-wrap;
 }
 
 .prompt {
-  color: #7aa2f7;
+  color: var(--prompt);
   font-weight: bold;
 }
 .command {
-  color: #7dcfff;
+  color: var(--command);
 }
 .info {
-  color: #bb9af7;
+  color: var(--info);
+}
+.man-section {
+  color: var(--man-section);
+  font-weight: bold;
+}
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
 }
 .statusbar {
   position: relative;
@@ -63,25 +110,25 @@ pre {
 }
 .statusbox {
   display: inline-block;
-  background: #24283b;
-  color: #a9b1d6;
+  background: var(--statusbox-bg);
+  color: var(--statusbox-fg);
   border-radius: 4px;
   padding: 2px 10px;
   margin-right: 4px;
   font-size: 0.95em;
 }
 .statusbox.host {
-  background: #394b70;
-  color: #e0af68;
+  background: var(--host-bg);
+  color: var(--host-fg);
 }
 a {
-  color: #7aa2f7;
+  color: var(--link);
   text-decoration: none;
-  border-bottom: 1px dotted #7aa2f7;
+  border-bottom: 1px dotted var(--link);
 }
 a:hover {
-  color: #bb9af7;
-  border-bottom: 1px solid #bb9af7;
+  color: var(--link-hover);
+  border-bottom: 1px solid var(--link-hover);
 }
 .nf {
   font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
