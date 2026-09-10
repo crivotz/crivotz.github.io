@@ -14,6 +14,7 @@
   --host-fg: #e0af68;
   --link: #7aa2f7;
   --link-hover: #bb9af7;
+  --statusbox-inactive-bg: #414868;
 }
 
 :root[data-theme="day"] {
@@ -32,6 +33,7 @@
   --host-fg: #8c6c3e;
   --link: #2e7de9;
   --link-hover: #9854f1;
+  --statusbox-inactive-bg: #c4c8da;
 }
 
 body {
@@ -134,6 +136,18 @@ pre {
 .statusbox.host {
   background: var(--host-bg);
   color: var(--host-fg);
+}
+.statusbox.lambda {
+  background: var(--info);
+  color: var(--bg);
+}
+.statusbox.active {
+  background: var(--command);
+  color: var(--bg);
+}
+.statusbox.inactive {
+  background: var(--statusbox-inactive-bg);
+  color: var(--statusbox-fg);
 }
 a {
   color: var(--link);
