@@ -39,6 +39,7 @@
 body {
   background-color: var(--bg);
   color: var(--fg);
+  font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
   min-height: 100vh;
   margin: 0;
   padding: 20px;
@@ -122,7 +123,13 @@ pre {
   padding: 0 0 8px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.statusbar .statusbar-right {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 .statusbox {
