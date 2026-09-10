@@ -36,13 +36,19 @@
   --statusbox-inactive-bg: #c4c8da;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
-  min-height: 100vh;
+  box-sizing: border-box;
   margin: 0;
   padding: 20px;
+  display: flex;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
@@ -52,7 +58,11 @@ body {
 }
 
 .terminal {
-  background: var(--terminal-bg)
+  background: var(--terminal-bg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
 }
 
 .logo-container {
@@ -88,6 +98,25 @@ pre {
   font-size: 1.1em;
   margin: 0;
   white-space: pre-line;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--statusbox-inactive-bg) transparent;
+}
+pre::-webkit-scrollbar {
+  width: 10px;
+}
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+  background-color: var(--statusbox-inactive-bg);
+  border-radius: 4px;
+  border: 2px solid var(--terminal-bg);
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background-color: var(--command);
 }
 
 @media (max-width: 600px) {
@@ -119,8 +148,10 @@ pre {
 }
 .statusbar {
   position: relative;
+  flex-shrink: 0;
   margin-top: 18px;
-  padding: 0 0 8px 0;
+  padding: 8px 0;
+  background: var(--terminal-bg);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
