@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Mauro Locatelli DEV",
+    "description": "Personal page Mauro Locatelli",
+    "keywords": "rails ruby debian vim mauro locatelli full stack developer",
+    "author": "Mauro Locatelli"
+  },
+  "whoami": {
+    "name": "Mauro Locatelli",
+    "role": "Full Stack Developer passionate about Ruby on Rails, Modern JavaScript, C#, and Cloud Solutions"
+  },
+  "about": [
+    "🇮🇹 Based in Italy",
+    "💎 Ruby on Rails specialist",
+    "⚡ Proficient in JavaScript, Bootstrap, C#, PHP",
+    "☁️ Experienced with all major cloud platforms, mainly Google Cloud Platform and AWS",
+    "🧗‍♂️ Climbing enthusiast",
+    "🎲 Tabletop RPG fan"
+  ],
+  "skills": ["Ruby on Rails", "JavaScript", "C#", "PHP", "GCP", "AWS"],
+  "stack": [
+    { "label": "OS", "value": "NixOS and Debian" },
+    { "label": "Editor", "value": "Neovim", "link": { "text": "nv-ide", "url": "https://github.com/crivotz/nv-ide" } },
+    { "label": "Shell", "value": "zsh" },
+    { "label": "Terminal", "value": "Ghostty" },
+    {
+      "label": "Dotfiles",
+      "links": [
+        { "text": "dot_files", "url": "https://github.com/crivotz/dot_files" },
+        { "text": "dot_files_nixos", "url": "https://github.com/crivotz/dot_files_nixos" }
+      ]
+    }
+  ],
+  "contact": [
+    { "label": "Linkedin", "url": "https://linkedin.com/in/maurolocatelli" },
+    { "label": "Stack Overflow", "url": "https://stackoverflow.com/users/3037432" },
+    { "label": "GitHub", "url": "https://github.com/crivotz" }
+  ],
+  "projects": [
+    { "name": "nv-ide/", "url": "https://github.com/crivotz/nv-ide" },
+    { "name": "dot_files/", "url": "https://github.com/crivotz/dot_files" },
+    { "name": "dot_files_nixos/", "url": "https://github.com/crivotz/dot_files_nixos" },
+    { "name": "FTBLegends/", "url": "https://locatelli.dev/FTBLegends" },
+    { "name": "gcheck/", "url": "https://github.com/crivotz/gcheck" },
+    { "name": "work/", "url": "https://www.aretes.net" }
+  ],
+  "statusbar": {
+    "shell": "zsh",
+    "branch": "main",
+    "host": "NIXMAU"
+  }
+}

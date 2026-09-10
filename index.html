@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mauro Locatelli DEV</title>
+  <title id="page-title">Loading…</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Personal page Mauro Locatelli">
-  <meta name="keywords" content="rails ruby debian vim mauro locatelli full stack developer">
-  <meta name="author" content="Mauro Locatelli">
+  <meta id="meta-description" name="description" content="">
+  <meta id="meta-keywords" name="keywords" content="">
+  <meta id="meta-author" name="author" content="">
   <meta name="generator" content="Neovim">
   <meta name="copyright" content="Mauro Locatelli">
   <meta name="dc" language content="ita" scheme="RFC1766">
@@ -26,97 +26,20 @@
 
 <body>
   <div class="terminal">
-    <pre id="terminal-content" class="mb-3">
-      <span class="prompt">❯</span> <span class="command">whoami</span>
-      <span class="info">Mauro Locatelli</span> — Full Stack Developer passionate about Ruby on Rails, Modern
-      JavaScript, C#, and Cloud Solutions
-
-      <span class="prompt">❯</span> <span class="command">cat about.md</span>
-      - 🇮🇹 Based in Italy
-      - 💎 Ruby on Rails specialist
-      - ⚡ Proficient in JavaScript, Bootstrap, C#, PHP
-      - ☁️ Experienced with all major cloud platforms, mainly Google Cloud Platform and AWS
-      - 🧗‍♂️ Climbing enthusiast
-      - 🎲 Tabletop RPG fan
-
-      <span class="prompt">❯</span> <span class="command">cat skills.md</span>
-      <span class="folders">
-        <span class="folder">Ruby on Rails</span>
-        <span class="folder">JavaScript</span>
-        <span class="folder">C#</span>
-        <span class="folder">PHP</span>
-        <span class="folder">GCP</span>
-        <span class="folder">AWS</span>
-      </span>
-
-      <span class="prompt">❯</span> <span class="command">cat stack.md</span>
-      - OS: NixOS and Debian
-      - Editor: Neovim (<a href="https://github.com/crivotz/nv-ide" target="_blank">nv-ide</a>)
-      - Shell: zsh
-      - Terminal: Ghostty
-      - Dotfiles: <a href="https://github.com/crivotz/dot_files" target="_blank">dot_files</a> / <a href="https://github.com/crivotz/dot_files_nixos" target="_blank">dot_files_nixos</a>
-
-      <span class="prompt">❯</span> <span class="command">cat contact.md</span>
-      - <a href="https://linkedin.com/in/maurolocatelli" target="_blank">Linkedin</a>
-      - <a href="https://stackoverflow.com/users/3037432" target="_blank">Stack Overflow</a>
-      - <a href="https://github.com/crivotz" target="_blank">GitHub</a>
-
-      <span class="prompt">❯</span> <span class="command">ls</span>
-      <span class="folders">
-        <span class="folder"><a href="https://github.com/crivotz/nv-ide"
-            target="_blank">nv-ide/</a></span>
-        <span class="folder"><a href="https://github.com/crivotz/dot_files"
-            target="_blank">dot_files/</a></span>
-        <span class="folder"><a href="https://github.com/crivotz/dot_files_nixos"
-            target="_blank">dot_files_nixos/</a></span>
-        <span class="folder"><a href="https://locatelli.dev/FTBLegends"
-            target="_blank">FTBLegends/</a></span>
-        <span class="folder"><a href="https://github.com/crivotz/gcheck"
-            target="_blank">gcheck/</a></span>
-        <span class="folder"><a href="https://www.aretes.net" target="_blank">work/</a></span>
-      </span>
-
-      <span class="prompt">❯</span> <a href="#" id="theme-toggle" class="command">toggle-theme</a>
-
-      <span class="prompt">❯</span> <span class="cursor">▌</span>
-    </pre>
+    <pre id="terminal-content" class="mb-3"></pre>
     <div class="statusbar">
       <span class="statusbox lambda"> λ </span>
-      <span class="statusbox active">1 ❯ zsh</span>
-      <span class="statusbox inactive">2 ❯ main</span>
+      <span class="statusbox active" id="status-shell">1 ❯ zsh</span>
+      <span class="statusbox inactive" id="status-branch">2 ❯ main</span>
       <span class="statusbar-right">
         <span class="statusbox inactive" id="status-date"></span>
         <span class="statusbox inactive" id="status-time"></span>
-        <span class="statusbox host fw-bold">NIXMAU</span>
+        <span class="statusbox host fw-bold" id="status-host"></span>
       </span>
     </div>
   </div>
-  <script>
-    function updateStatusBar() {
-      const now = new Date();
-      const date = now.toLocaleDateString('it-IT').replace(/\//g, '-'); // DD-MM-YYYY
-      const time = now.toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit'});
-      document.getElementById('status-date').textContent = date;
-      document.getElementById('status-time').textContent = time;
-    }
-    updateStatusBar();
-    setInterval(updateStatusBar, 60000); // Update every minute
-
-    const THEME_KEY = 'theme';
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-    const savedTheme = localStorage.getItem(THEME_KEY) || 'night';
-    applyTheme(savedTheme);
-
-    document.getElementById('theme-toggle').addEventListener('click', function (e) {
-      e.preventDefault();
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'day' ? 'night' : 'day';
-      applyTheme(next);
-      localStorage.setItem(THEME_KEY, next);
-    });
-  </script>
+  <script src="app.js"></script>
+  <script src="cursor.js"></script>
 </body>
 
 </html>
