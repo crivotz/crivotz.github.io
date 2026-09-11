@@ -13,11 +13,11 @@
     "🇮🇹 Based in Italy",
     "💎 Ruby on Rails specialist",
     "⚡ Proficient in JavaScript, Bootstrap, C#, PHP",
-    "☁️ Experienced with all major cloud platforms, mainly Google Cloud Platform and AWS",
+    "☁️ Experienced with all major cloud platforms",
     "🧗‍♂️ Climbing enthusiast",
     "🎲 Tabletop RPG fan"
   ],
-  "skills": ["Ruby on Rails", "JavaScript", "C#", "PHP", "GCP", "AWS"],
+  "skills": ["Ruby on Rails", "JavaScript", "C#", "PHP", "GCP", "AWS", "AZURE"],
   "stack": [
     { "label": "OS", "value": "NixOS and Debian" },
     { "label": "Editor", "value": "Neovim", "link": { "text": "nv-ide", "url": "https://github.com/crivotz/nv-ide" } },
@@ -46,7 +46,7 @@
   ],
   "statusbar": {
     "shell": "zsh",
-    "branch": "main",
+    "branch": "NV-IDE",
     "host": "NIXMAU"
   }
 }
