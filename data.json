@@ -17,12 +17,22 @@
     "🧗‍♂️ Climbing enthusiast",
     "🎲 Tabletop RPG fan"
   ],
-  "skills": ["Ruby on Rails", "JavaScript", "C#", "PHP", "GCP", "AWS", "AZURE"],
+  "skills": [
+    { "name": "Ruby on Rails", "url": "https://rubyonrails.org" },
+    "JavaScript", "C#", "PHP", "GCP", "AWS", "AZURE"
+  ],
   "stack": [
-    { "label": "OS", "value": "NixOS and Debian" },
+    {
+      "label": "OS",
+      "segments": [
+        { "text": "NixOS", "url": "https://nixos.org" },
+        { "text": " and " },
+        { "text": "Debian", "url": "https://www.debian.org" }
+      ]
+    },
     { "label": "Editor", "value": "Neovim", "link": { "text": "nv-ide", "url": "https://github.com/crivotz/nv-ide" } },
     { "label": "Shell", "value": "zsh" },
-    { "label": "Terminal", "value": "Ghostty" },
+    { "label": "Terminal", "segments": [{ "text": "Ghostty", "url": "https://ghostty.org" }] },
     {
       "label": "Dotfiles",
       "links": [

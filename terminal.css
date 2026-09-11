@@ -187,6 +187,16 @@ pre::-webkit-scrollbar-thumb:hover {
   background: var(--statusbox-inactive-bg);
   color: var(--statusbox-fg);
 }
+.statusbox.theme-toggle {
+  background: var(--man-section);
+  color: var(--bg);
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+.statusbox.theme-toggle:hover {
+  filter: brightness(1.15);
+}
 a {
   color: var(--link);
   text-decoration: none;

@@ -18,14 +18,24 @@ function renderAbout(lines) {
 }
 
 function renderSkills(skills) {
-  const items = skills.map((s) => `        <span class="folder">${escapeHtml(s)}</span>`).join('\n');
+  const items = skills.map((s) => {
+    if (typeof s === 'object' && s.url) {
+      return `        <span class="folder"><a href="${escapeHtml(s.url)}" target="_blank">${escapeHtml(s.name)}</a></span>`;
+    }
+    const label = typeof s === 'object' ? s.name : s;
+    return `        <span class="folder">${escapeHtml(label)}</span>`;
+  }).join('\n');
   return `      <span class="folders">\n${items}\n      </span>`;
 }
 
 function renderStack(items) {
   return items.map((item) => {
     let line = `      - ${escapeHtml(item.label)}: `;
-    if (item.link) {
+    if (item.segments) {
+      line += item.segments
+        .map((seg) => (seg.url ? `<a href="${escapeHtml(seg.url)}" target="_blank">${escapeHtml(seg.text)}</a>` : escapeHtml(seg.text)))
+        .join('');
+    } else if (item.link) {
       line += `${escapeHtml(item.value)} (<a href="${escapeHtml(item.link.url)}" target="_blank">${escapeHtml(item.link.text)}</a>)`;
     } else if (item.links) {
       line += item.links
@@ -71,8 +81,6 @@ ${renderContact(data.contact)}
       <span class="prompt">❯</span> <span class="command">ls</span>
 ${renderProjects(data.projects)}
 
-      <span class="prompt">❯</span> <a href="#" id="theme-toggle" class="command">toggle-theme</a>
-
       <span class="prompt">❯</span> <span class="cursor">▌</span>
     `;
   document.getElementById('terminal-content').innerHTML = html;
@@ -115,13 +123,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Theme toggle is created dynamically once data.json loads, so use delegation.
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'day' ? 'night' : 'day';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+}
+
 document.addEventListener('click', (e) => {
   if (e.target && e.target.id === 'theme-toggle') {
     e.preventDefault();
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'day' ? 'night' : 'day';
-    applyTheme(next);
-    localStorage.setItem(THEME_KEY, next);
+    toggleTheme();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.target && e.target.id === 'theme-toggle' && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault();
+    toggleTheme();
   }
 });
